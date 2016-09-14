@@ -2,8 +2,6 @@
 FROM ubuntu:latest
 MAINTAINER Zhao Chunyou <zhaochunyou@gmail.com>
 
-ADD sources.list /etc/apt/sources.list
-
 RUN apt-get update
 RUN apt-get install -y git wget build-essential python python-setuptools python-pip python-dev libffi-dev nginx
 
