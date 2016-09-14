@@ -23,12 +23,12 @@ ENV ALLOWED_EMAIL_DOMAIN *
 ENV ALLOWED_GITHUB_ORGS *
 ENV GITLAB_URL not-set
 ENV ALLOWED_GITLAB_GROUPS *
-ENV MONGO_HOST = not-set
-ENV MONGO_PORT = not-set
-ENV MONGO_DATABASE = 'alerts-monitoring'
-ENV MONGO_REPLSET = None
-ENV MONGO_USERNAME = not-set
-ENV MONGO_PASSWORD = not-set
+ENV MONGO_HOST not-set
+ENV MONGO_PORT not-set
+ENV MONGO_DATABASE 'alerts-monitoring'
+ENV MONGO_REPLSET None
+ENV MONGO_USERNAME not-set
+ENV MONGO_PASSWORD not-set
 
 ADD config.js.sh /config.js.sh
 ADD alertad.conf.sh /alertad.conf.sh
