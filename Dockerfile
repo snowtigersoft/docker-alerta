@@ -1,11 +1,14 @@
 
 FROM ubuntu:latest
-MAINTAINER Nick Satterly <nick.satterly@theguardian.com>
+MAINTAINER Zhao Chunyou <zhaochunyou@gmail.com>
 
-RUN apt-get update && apt-get install -y git wget build-essential python python-setuptools python-pip python-dev libffi-dev nginx
+ADD sources.list /etc/apt/sources.list
 
-RUN pip install alerta-server
+RUN apt-get update
+RUN apt-get install -y git wget build-essential python python-setuptools python-pip python-dev libffi-dev nginx
+
 RUN pip install gunicorn supervisor
+RUN pip install alerta-server==4.8.3
 
 RUN wget -q -O - https://github.com/alerta/angular-alerta-webui/tarball/master | tar zxf -
 RUN mv alerta-angular-alerta-webui-*/app /app
@@ -22,6 +25,12 @@ ENV ALLOWED_EMAIL_DOMAIN *
 ENV ALLOWED_GITHUB_ORGS *
 ENV GITLAB_URL not-set
 ENV ALLOWED_GITLAB_GROUPS *
+ENV MONGO_HOST = not-set
+ENV MONGO_PORT = not-set
+ENV MONGO_DATABASE = 'alerts-monitoring'
+ENV MONGO_REPLSET = None
+ENV MONGO_USERNAME = not-set
+ENV MONGO_PASSWORD = not-set
 
 ADD config.js.sh /config.js.sh
 ADD alertad.conf.sh /alertad.conf.sh
