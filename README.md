@@ -35,4 +35,4 @@ Support these env vars:
 -e AUTH_REQUIRED True/False  Must login or not
 -e ALLOWED_EMAIL_DOMAINS register user domains
 -e CORS_ORIGINS http://127.0.0.1,http://localhost
--e MONGO_URI mongo connection string
+-e MONGO_URI mongo connection string  
