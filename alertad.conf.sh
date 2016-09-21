@@ -17,5 +17,5 @@ ALLOWED_GITLAB_GROUPS = ['$ALLOWED_GITLAB_GROUPS']
 MONGO_URI = '$MONGO_URI'
 
 PLUGINS = ['reject', 'amqp']
-ALLOWED_ENVIRONMENTS = ['Strategy', 'Strategy heartbeat', 'Rule status']
+ALLOWED_ENVIRONMENTS = ['Strategy', 'Strategy heartbeat', 'Rule status', 'Production', 'Development']
 EOF
