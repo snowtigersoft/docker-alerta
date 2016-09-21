@@ -11,6 +11,11 @@ RUN pip install alerta-server==4.8.3
 RUN wget -q -O - https://github.com/alerta/angular-alerta-webui/tarball/master | tar zxf -
 RUN mv alerta-angular-alerta-webui-*/app /app
 
+RUN mkdir amqp
+RUN wget https://raw.githubusercontent.com/alerta/alerta-contrib/master/plugins/amqp/alerta_amqp.py -O amqp/alerta_amqp.py
+RUN wget https://raw.githubusercontent.com/alerta/alerta-contrib/master/plugins/amqp/setup.py -O amqp/setup.py
+RUN cd amqp && python setup.py install
+
 ENV ALERTA_SVR_CONF_FILE /alertad.conf
 ENV BASE_URL /api
 ENV AUTH_REQUIRED False
