@@ -31,6 +31,8 @@ ENV GITLAB_URL not-set
 ENV ALLOWED_GITLAB_GROUPS *
 ENV MONGO_URI not-set
 ENV EMAIL_TYPE html
+ENV SMTP_HOST smtp.gmail.com
+ENV SMTP_PORT 587
 
 ADD config.js.sh /config.js.sh
 ADD alertad.conf.sh /alertad.conf.sh
