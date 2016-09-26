@@ -33,6 +33,13 @@ ENV MONGO_URI not-set
 ENV EMAIL_TYPE html
 ENV SMTP_HOST smtp.gmail.com
 ENV SMTP_PORT 587
+ENV ALERTA_API_KEY not-set
+ENV ALERTA_ENDPOINT http://127.0.0.1:80/api
+ENV ALERTA_MAIL_TO not-set
+ENV ALERTA_MAIL_FROM not-set
+ENV AMQP_URL not-set
+ENV DASHBOARD_URL http://127.0.0.1:80
+ENV SMTP_PASSWORD not-set
 
 ADD config.js.sh /config.js.sh
 ADD alertad.conf.sh /alertad.conf.sh
@@ -41,4 +48,4 @@ ADD nginx.conf /nginx.conf
 ADD supervisord.conf /etc/supervisord.conf
 
 EXPOSE 80
-CMD /config.js.sh && /alertad.conf.sh && /alerta.conf.sh && supervisord -n
+CMD cd / && chmod +x *.sh && /config.js.sh && /alertad.conf.sh && /alerta.conf.sh && supervisord -n
