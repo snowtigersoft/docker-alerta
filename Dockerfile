@@ -11,7 +11,7 @@ RUN pip install alerta-server==4.8.3
 RUN wget -q -O - https://github.com/alerta/angular-alerta-webui/tarball/master | tar zxf -
 RUN mv alerta-angular-alerta-webui-*/app /app
 
-RUN wget -q -O - https://github.com/alerta/alerta-contrib/tarball/master | tar zxf -
+RUN wget -q -O - https://github.com/snowtigersoft/alerta-contrib/tarball/master | tar zxf -
 RUN mv alerta-alerta-contrib-* alerta-contrib
 RUN cd alerta-contrib/plugins/amqp && python setup.py install
 RUN cd alerta-contrib/integrations/mailer && python setup.py install
