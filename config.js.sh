@@ -16,14 +16,14 @@ angular.module('config', [])
         'major'        : '#f2dede',
         'minor'        : '#f7ecb5',
         'warning'      : '#fcf8e3',
-        'indeterminate': '#silver',
+        'indeterminate': 'silver',
         'cleared'      : '#c1e2b3',
         'normal'       : '#c1e2b3',
         'ok'           : '#c1e2b3',
         'informational': '#c1e2b3',
         'debug'        : '#afd9ee',
         'security'     : '#d9edf7',
-        'unknown'      : '#silver'
+        'unknown'      : 'silver'
       },
       'highlight': 'lightgray'
     }
