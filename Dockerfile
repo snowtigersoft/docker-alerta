@@ -8,8 +8,8 @@ RUN apt-get install -y git wget build-essential python python-setuptools python-
 RUN pip install gunicorn supervisor
 RUN pip install alerta-server==4.8.3
 
-RUN wget -q -O - https://github.com/alerta/angular-alerta-webui/tarball/master | tar zxf -
-RUN mv alerta-angular-alerta-webui-*/app /app
+RUN wget -q -O - https://github.com/snowtigersoft/angular-alerta-webui/tarball/master | tar zxf -
+RUN mv snowtigersoft-angular-alerta-webui-*/app /app
 
 RUN wget -q -O - https://github.com/snowtigersoft/alerta-contrib/tarball/master | tar zxf -
 RUN mv snowtigersoft-alerta-contrib-* alerta-contrib
