@@ -14,7 +14,10 @@ RUN mv snowtigersoft-angular-alerta-webui-*/app /app
 RUN wget -q -O - https://github.com/snowtigersoft/alerta-contrib/tarball/master | tar zxf -
 RUN mv snowtigersoft-alerta-contrib-* alerta-contrib
 RUN cd alerta-contrib/plugins/amqp && python setup.py install
-RUN cd alerta-contrib/integrations/mailer && python setup.py install
+
+RUN wget -q -O - https://github.com/snowtigersoft/alerta-mailer/tarball/master | tar zxf -
+RUN mv snowtigersoft-alerta-mailer-* alerta-mailer
+RUN cd alerta-mailer && python setup.py install
 
 ENV ALERTA_SVR_CONF_FILE /alertad.conf
 ENV ALERTA_CONF_FILE /alerta.conf
@@ -40,6 +43,7 @@ ENV ALERTA_MAIL_FROM not-set
 ENV AMQP_URL not-set
 ENV DASHBOARD_URL http://127.0.0.1:80
 ENV SMTP_PASSWORD not-set
+ENV API_RULES_URL not-set
 
 ADD config.js.sh /config.js.sh
 ADD alertad.conf.sh /alertad.conf.sh

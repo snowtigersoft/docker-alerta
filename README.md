@@ -35,4 +35,15 @@ Support these env vars:
 -e AUTH_REQUIRED True/False  Must login or not
 -e ALLOWED_EMAIL_DOMAINS register user domains
 -e CORS_ORIGINS http://127.0.0.1,http://localhost
--e MONGO_URI mongo connection string  
+-e MONGO_URI mongo connection string 
+-e AMQP_URL amqp url 
+-e AMQP_TOPIC amqp topic 
+-e DASHBOARD_URL the alerta dashboard url, use in mailer 
+-e SMTP_HOST smtp host, use in mailer 
+-e SMTP_PORT smtp port, use in mailer 
+-e SMTP_PASSWORD smtp password, use in mailer 
+-e ALERTA_MAIL_FROM from email address, use in mailer 
+-e ALERTA_MAIL_TO to email address, use in mailer 
+-e ALERTA_ENDPOINT the alerta server endpoint, use in mailer 
+-e ALERTA_API_KEY the alerta api key, use in mailer 
+-e API_RULES_URL the rule checker emails list url

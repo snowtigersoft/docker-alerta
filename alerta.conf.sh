@@ -14,4 +14,5 @@ skip_mta = False
 email_type = $EMAIL_TYPE
 smtp_host = $SMTP_HOST
 smtp_post = $SMTP_PORT
+api_rules_url = $API_RULES_URL
 EOF
